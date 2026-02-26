@@ -61,6 +61,49 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </button>
     </div>
+    <div container text-center my-5>
+      <h2>Nuestros servicios</h2>
+      <button
+        class="btn btn-primary btn-lg"
+        data-bs-toggle="modal"
+        bs-target="#promoModal"
+      >
+        Ver promocion del mes
+      </button>
+      <button
+        class="btn btn-outline-dark btn-lg"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#menuLateral"
+      >
+        Menu Principal
+      </button>
+    </div>
+    <div class="modal fade" id="promoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">¡Oferta Especial!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal">
+              ¡Oferta Especial!
+            </button>
+          </div>
+          <div class="modal-body">
+            20% de descuento en detallado completo si traes tu auto antes de las
+            10 AM.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas offcanvas-start" id="menuLateral">
+      <div class="offcanvas-header"></div>
+      <div class="offcanvas-body">
+        <ul>
+          <li href="#Inicio"></li>
+          <li href="#Servicios"></li>
+          <li href="#Contacto"></li>
+        </ul>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
