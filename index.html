@@ -3,47 +3,117 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <title>Alex Detailing | Bootstrap 5</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-
-    <title>Inicio con Bootstrap</title>
+    <style>
+      /* Ajuste para que el scrollspy no tape el título con la navbar fija */
+      section {
+        padding-top: 80px;
+      }
+      #carruselServicios {
+        padding-top: 56px;
+      }
+    </style>
   </head>
-  <body>
+
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#navbar-principal"
+    data-bs-offset="100"
+    tabindex="0"
+  >
+    <nav
+      id="navbar-principal"
+      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">🏎️ Alex Detailing</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#miMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="miMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#carruselServicios">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicios-extra">Promos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Agendar Cita</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div id="carruselServicios" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carruselServicios"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carruselServicios"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carruselServicios"
+          data-bs-slide-to="2"
+        ></button>
+      </div>
+
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            src="https://placehold.co/1200x400/000000/FFF?text=Lavado+de+Motor"
+            src="https://placehold.co/1200x500/1a1a1a/FFF?text=Lavado+de+Motor+Premium"
             class="d-block w-100"
+            alt="Motor"
           />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Titulo del servicio</h5>
+            <h5>Ingeniería Limpia</h5>
+            <p>Tu motor como el primer día.</p>
           </div>
         </div>
         <div class="carousel-item">
           <img
-            src="https://placehold.co/1200x400/000000/FFF?text=Lavado+de+Motor"
+            src="https://placehold.co/1200x500/darkblue/FFF?text=Pulido+Cerámico"
             class="d-block w-100"
+            alt="Ceramico"
           />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Titulo del servicio</h5>
+            <h5>Protección Cerámica</h5>
+            <p>Brillo espejo garantizado por 2 años.</p>
           </div>
         </div>
         <div class="carousel-item">
           <img
-            src="https://placehold.co/1200x400/000000/FFF?text=Lavado+de+Motor"
+            src="https://placehold.co/1200x500/darkred/FFF?text=Interiores+al+Detalle"
             class="d-block w-100"
+            alt="Interiores"
           />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Titulo del servicio</h5>
+            <h5>Restauración de Interiores</h5>
+            <p>Piel, tela y tableros impecables.</p>
           </div>
         </div>
       </div>
+
       <button
         class="carousel-control-prev"
         type="button"
@@ -61,53 +131,196 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </button>
     </div>
-    <div container text-center my-5>
-      <h2>Nuestros servicios</h2>
-      <button
-        class="btn btn-primary btn-lg"
-        data-bs-toggle="modal"
-        bs-target="#promoModal"
-      >
-        Ver promocion del mes
-      </button>
-      <button
-        class="btn btn-outline-dark btn-lg"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#menuLateral"
-      >
-        Menu Principal
-      </button>
-    </div>
+
+    <section id="servicios-extra" class="container text-center my-5">
+      <h2 class="mb-4">Experiencia Alex Detailing</h2>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button
+          class="btn btn-primary btn-lg px-4 gap-3"
+          data-bs-toggle="modal"
+          data-bs-target="#promoModal"
+        >
+          🎁 Ver Promoción del Mes
+        </button>
+        <button
+          class="btn btn-outline-dark btn-lg px-4"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menuLateral"
+        >
+          ☰ Menú Rápido
+        </button>
+      </div>
+    </section>
+
+    <section id="contacto" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Agenda tu Cita</h2>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    placeholder="Nombre"
+                    required
+                  />
+                  <label for="nombre">Nombre del Cliente</label>
+                  <div class="invalid-feedback">
+                    Necesitamos tu nombre para la reserva.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="telefono"
+                    placeholder="Teléfono"
+                    required
+                  />
+                  <label for="telefono">Teléfono</label>
+                  <div class="invalid-feedback">
+                    El teléfono es obligatorio.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <label for="servicioSelect" class="form-label"
+                  >Tipo de Servicio</label
+                >
+                <select class="form-select" id="servicioSelect" required>
+                  <option selected disabled value="">
+                    Elige una opción...
+                  </option>
+                  <option value="1">Lavado de Motor</option>
+                  <option value="2">Pulido Cerámico</option>
+                  <option value="3">Detallado Interior Completo</option>
+                </select>
+                <div class="invalid-feedback">
+                  Por favor selecciona un servicio.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="perro" />
+                  <label class="form-check-label" for="perro">
+                    ¿El vehículo tiene exceso de pelo de mascota? (+$200 MXN)
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 text-end">
+                <button class="btn btn-success btn-lg" type="submit">
+                  Confirmar Cita
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+      <p class="mb-0">&copy; 2024 Alex Detailing - Creado con Bootstrap 5</p>
+    </footer>
+
     <div class="modal fade" id="promoModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">¡Oferta Especial!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal">
-              ¡Oferta Especial!
-            </button>
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">¡Oferta Especial Febrero! 🚀</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
-            20% de descuento en detallado completo si traes tu auto antes de las
-            10 AM.
+            <p class="lead">
+              Obtén un <strong>20% de descuento</strong> en tu primer detallado
+              cerámico.
+            </p>
+            <p>Menciona el código <code>ALEX2024</code> al llegar al taller.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary">¡Lo quiero!</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="offcanvas offcanvas-start" id="menuLateral">
-      <div class="offcanvas-header"></div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+      <div class="offcanvas-header bg-dark text-white">
+        <h5 class="offcanvas-title">Menú Rápido</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
       <div class="offcanvas-body">
-        <ul>
-          <li href="#Inicio"></li>
-          <li href="#Servicios"></li>
-          <li href="#Contacto"></li>
-        </ul>
+        <div class="list-group list-group-flush">
+          <a
+            href="#carruselServicios"
+            class="list-group-item list-group-item-action"
+            >🏠 Inicio</a
+          >
+          <a
+            href="#servicios-extra"
+            class="list-group-item list-group-item-action"
+            >🏷️ Promociones</a
+          >
+          <a href="#contacto" class="list-group-item list-group-item-action"
+            >📅 Agendar Cita</a
+          >
+          <a href="#" class="list-group-item list-group-item-action"
+            >📞 Contacto</a
+          >
+        </div>
       </div>
     </div>
+
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      (() => {
+        "use strict";
+        const forms = document.querySelectorAll(".needs-validation");
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false,
+          );
+        });
+      })();
+    </script>
   </body>
 </html>
